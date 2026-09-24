@@ -1,5 +1,7 @@
 .main-box{
     border:solid 2px black;
+    padding:5px;
+    border-radius:5px;
 }
 
 main{
