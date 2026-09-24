@@ -10,6 +10,7 @@ main{
         "header header header"
         "nav nav nav"
         "side-left body side-right";
+    grid-gap: 10px;
 }
 
 #main-head{
