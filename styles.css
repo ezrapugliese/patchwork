@@ -1,1 +1,33 @@
+#box-main{
+    border:solid 2px black
+}
 
+main{
+    display:grid;
+    grid-template-columns: 1fr 4fr 2fr;
+    grid-template-rows: 2fr 1fr 6fr;
+    grid-template-areas:
+        "header header header"
+        "nav nav nav"
+        "side-left body side-right";
+}
+
+.main-head{
+    grid-area: header;
+}
+
+.navigation{
+    grid-area: nav;
+}
+
+.sidebar-left{
+    grid-area: side-left;
+}
+
+.body{
+    grid-area: body;
+}
+
+.sidebar-right{
+    grid-area: side-right;
+}
