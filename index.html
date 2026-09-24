@@ -12,13 +12,23 @@
 <body>
     <main>
         <header id="main-head" class="main-box">
-            <span id="header-logo" class="icon-small"><img src="assets/icon.png"
-                    placeholder="logo"></span><span>patchwork - v0.0.1</span>
+            <div class="header-content">
+                <span id="header-logo" class="icon-small"><img src="assets/icon.png"
+                        placeholder="logo"></span><span>patchwork - v0.0.1</span>
+            </div>
+            <div class="mobile-controls" aria-label="Sidebar controls">
+                <button class="sidebar-toggle left-toggle" type="button" aria-label="Open left sidebar" aria-expanded="false">
+                    ☰
+                </button>
+                <button class="sidebar-toggle right-toggle" type="button" aria-label="Open right sidebar" aria-expanded="false">
+                    ☰
+                </button>
+            </div>
         </header>
         <nav id="navigation" class="main-box">
             <span class="button-nav">placeholder</span>
         </nav>
-        <sidebar id="sidebar-left" class="main-box">
+        <aside id="sidebar-left" class="main-box">
             <ul>
                 <li><span class="button-sidebar"><span class="icon-small"><img src="assets/icon-dashboard.png"
                                 placeholder="logo"></span>Dashboard</span></li>
@@ -29,14 +39,14 @@
                 <li><span class="button-sidebar"><span class="icon-small"><img src="assets/icon-settings.png"
                                 placeholder="logo"></span>Settings</span></li>
             </ul>
-        </sidebar>
+        </aside>
         <div id="body" class="main-box">
             <p>main</p>
         </div>
-        <div id="sidebar-right" class="main-box">right sidebar</div>
+        <aside id="sidebar-right" class="main-box">right sidebar</aside>
     </main>
 
-
+    <script src="scripts.js"></script>
 </body>
 
 </html>
