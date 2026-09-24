@@ -1,4 +1,4 @@
-#main-box{
+.main-box{
     border:solid 2px black;
 }
 
@@ -12,11 +12,11 @@ main{
         "side-left body side-right";
 }
 
-.main-head{
+#main-head{
     grid-area: header;
 }
 
-.navigation{
+#navigation{
     grid-area: nav;
 }
 
@@ -24,10 +24,10 @@ main{
     grid-area: side-left;
 }
 
-.body{
+#body{
     grid-area: body;
 }
 
-.sidebar-right{
+#sidebar-right{
     grid-area: side-right;
 }
