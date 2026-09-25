@@ -31,11 +31,13 @@ body {
 }
 
 main {
-    max-width: 1400px;
+    width: 100%;
+    height: calc(100vh - 44px);
+    height: calc(100dvh - 44px);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 4fr 2fr;
-    grid-template-rows: auto auto minmax(420px, 1fr);
+    grid-template-columns: minmax(180px, 1fr) minmax(0, 4fr) minmax(180px, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr);
     grid-template-areas:
         "header header header"
         "nav nav nav"
@@ -85,6 +87,12 @@ main {
     border: 1px solid rgba(138, 121, 103, 0.2);
 }
 
+#header-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .icon-small img {
     display: block;
     width: 18px;
@@ -92,11 +100,38 @@ main {
     object-fit: contain;
 }
 
-#main-head span:last-child {
+.header-content {
+    color: inherit;
+    text-decoration: none;
+}
+
+.brand-name {
     font-size: 1.05rem;
     font-weight: 600;
     letter-spacing: 0.02em;
     color: var(--text);
+}
+
+.brand-version {
+    align-self: flex-start;
+    margin: 2px 0 0 -4px;
+    padding-left: 10px;
+    border-left: 1px solid var(--accent);
+    color: var(--accent-strong);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.header-content:hover .brand-name {
+    color: var(--accent-strong);
+}
+
+.header-content:focus-visible {
+    border-radius: 8px;
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
 }
 
 #navigation {
@@ -162,7 +197,7 @@ main {
 
 #body {
     grid-area: body;
-    min-height: 280px;
+    min-height: 0;
     background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(245,241,237,0.85));
     padding: 0;
     overflow: hidden;
@@ -172,7 +207,7 @@ main {
     display: block;
     width: 100%;
     height: 100%;
-    min-height: 420px;
+    min-height: 0;
     border: 0;
 }
 
@@ -234,6 +269,8 @@ main {
     }
 
     main {
+        height: calc(100vh - 32px);
+        height: calc(100dvh - 32px);
         grid-template-columns: 1fr;
         grid-template-areas:
             "header"
