@@ -34,23 +34,21 @@
         </nav>
         <aside id="sidebar-left" class="main-box">
             <ul>
-                <li><span class="button-sidebar"><span class="icon-small"><img src="assets/icon-dashboard.png"
-                                placeholder="logo"></span>Dashboard</span></li>
-                <li><span class="button-sidebar"><span class="icon-small"><img src="assets/icon-system.png"
-                                placeholder="logo"></span>System</span></li>
-                <li><span class="button-sidebar"><span class="icon-small"><img src="assets/icon-alters.png"
-                                placeholder="logo"></span>Alters</span></li>
-                <li><span class="button-sidebar"><span class="icon-small"><img src="assets/icon-settings.png"
-                                placeholder="logo"></span>Settings</span></li>
+                <li><a class="button-sidebar" href="pages/dashboard.html" target="content-frame"><span class="icon-small"><img src="assets/icon-dashboard.png"
+                                placeholder="logo"></span>Dashboard</a></li>
+                <li><a class="button-sidebar" href="pages/system.html" target="content-frame"><span class="icon-small"><img src="assets/icon-system.png"
+                                placeholder="logo"></span>System</a></li>
+                <li><a class="button-sidebar" href="pages/alters.html" target="content-frame"><span class="icon-small"><img src="assets/icon-alters.png"
+                                placeholder="logo"></span>Alters</a></li>
+                <li><a class="button-sidebar" href="pages/settings.html" target="content-frame"><span class="icon-small"><img src="assets/icon-settings.png"
+                                placeholder="logo"></span>Settings</a></li>
             </ul>
         </aside>
-        <div id="body" class="main-box">
-            <p>main</p>
-        </div>
+        <section id="body" class="main-box">
+            <iframe name="content-frame" title="Page content" src="pages/dashboard.html"></iframe>
+        </section>
         <aside id="sidebar-right" class="main-box">right sidebar</aside>
     </main>
-
-    <script src="scripts.js"></script>
 </body>
 
 </html>
