@@ -9,4 +9,4 @@
 - this section is a work in progress, check back later for updates :)
 
 ## still have questions? 
-- join the **discord** to ask questions, meet users, and contribute!
+- join the [**discord**](https://discord.gg/CbcWTsXAgP) to ask questions, meet users, and contribute!
