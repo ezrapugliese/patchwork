@@ -30,8 +30,24 @@
                 </button>
             </div>
         </header>
-        <nav id="navigation" class="main-box">
-            <span class="button-nav">placeholder</span>
+        <nav id="navigation" class="main-box" aria-label="Global tools">
+            <div class="toolbar-row">
+                <button id="switcher-button" class="toolbar-button switcher-button" type="button" aria-haspopup="dialog" aria-controls="switcher-dialog">
+                    <span>Switch alter</span><kbd>Ctrl K</kbd>
+                </button>
+                <form id="page-search" class="search-form" role="search">
+                    <label class="search-field">
+                        <span aria-hidden="true">⌕</span>
+                        <input id="search-query" type="search" placeholder="Search this page" aria-label="Search this page">
+                    </label>
+                    <button class="toolbar-button search-submit" type="submit">Search</button>
+                </form>
+                <div class="toolbar-actions">
+                    <button id="discord-sync-button" class="toolbar-button" type="button" aria-haspopup="dialog" aria-controls="discord-dialog">sync to Discord</button>
+                    <button id="activity-button" class="toolbar-button" type="button" aria-haspopup="dialog" aria-controls="activity-dialog">Activity</button>
+                </div>
+            </div>
+            <p id="toolbar-status" class="toolbar-status" role="status" aria-live="polite"></p>
         </nav>
         <aside id="sidebar-left" class="main-box">
             <ul>
@@ -50,6 +66,48 @@
         </section>
         <aside id="sidebar-right" class="main-box">right sidebar</aside>
     </main>
+
+    <dialog id="switcher-dialog" class="toolbar-dialog" aria-labelledby="switcher-title">
+        <div class="dialog-heading">
+            <h2 id="switcher-title">Switch alter</h2>
+            <button class="dialog-close" type="button" aria-label="Close">×</button>
+        </div>
+        <div class="empty-state">
+            <p class="empty-state-title">no alters added yet</p>
+            <p class="dialog-hint">a list of alters will show up once they're added.</p>
+            <a id="switcher-alters-link" class="toolbar-button primary-action" href="pages/alters.html" target="content-frame">Open Alters</a>
+        </div>
+    </dialog>
+
+    <dialog id="discord-dialog" class="toolbar-dialog" aria-labelledby="discord-title">
+        <div class="dialog-heading">
+            <h2 id="discord-title">Discord sync</h2>
+            <button class="dialog-close" type="button" aria-label="Close">×</button>
+        </div>
+        <p class="connection-state">Not connected</p>
+        <p class="dialog-hint">configure bot connections in settings.</p>
+        <p class="integration-label">planned bot connections</p>
+        <ul class="integration-list">
+            <li>PluralKit</li>
+            <li>PluralBuddy</li>
+            <li>Ourkitty</li>
+            <li>Tupperbox</li>
+        </ul>
+        <a id="discord-settings-link" class="toolbar-button primary-action settings-action" href="pages/settings.html" target="content-frame">Open Settings</a>
+    </dialog>
+
+    <dialog id="activity-dialog" class="toolbar-dialog" aria-labelledby="activity-title">
+        <div>
+            <div class="dialog-heading">
+                <h2 id="activity-title">Activity</h2>
+                <button class="dialog-close" type="button" aria-label="Close">×</button>
+            </div>
+            <p class="dialog-hint">recent changes from this tab. undo is available until the tab is closed.</p>
+            <div id="activity-list" class="activity-list" role="feed" aria-label="Recent changes" aria-live="polite">
+                <p class="empty-activity">no changes found.</p>
+            </div>
+        </div>
+    </dialog>
 </body>
 
 </html>
