@@ -1,0 +1,256 @@
+/* pages/alters.css — Alters page, rendered inside #content-frame. */
+
+.page {
+    padding: 22px;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0 0 18px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+    letter-spacing: 0.01em;
+}
+
+/* ── alter grid ─────────────────────────────────────────────────── */
+
+.alter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 14px;
+}
+
+.alter-grid .empty-state {
+    grid-column: 1 / -1;
+}
+
+.alter-card {
+    display: flex;
+    flex-direction: column;
+    padding: 14px 16px 16px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--panel-strong);
+    box-shadow: var(--shadow);
+}
+
+.alter-card-accent {
+    height: 5px;
+    margin: 0 0 12px;
+    border-radius: 999px;
+    background: var(--alter-color, var(--accent));
+}
+
+.alter-card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.alter-avatar-wrap {
+    flex: 0 0 auto;
+    width: 46px;
+    height: 46px;
+}
+
+.alter-avatar-img,
+.alter-avatar-fallback {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.alter-avatar-img {
+    object-fit: cover;
+}
+
+.alter-avatar-fallback {
+    background: var(--alter-color, var(--accent));
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.alter-card-identity {
+    min-width: 0;
+}
+
+.alter-name {
+    font-size: 1rem;
+    font-weight: 650;
+    overflow-wrap: anywhere;
+}
+
+.alter-pronouns {
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 0.8rem;
+    overflow-wrap: anywhere;
+}
+
+.alter-desc {
+    margin: 12px 0 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.alter-proxies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.proxy-chip {
+    padding: 3px 7px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--panel-muted);
+    color: var(--accent-strong);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 0.74rem;
+    overflow-wrap: anywhere;
+}
+
+.alter-card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 14px;
+}
+
+.alter-card-actions .toolbar-button {
+    flex: 1 1 auto;
+}
+
+/* ── add / edit dialog ──────────────────────────────────────────── */
+
+#alter-dialog {
+    width: min(520px, calc(100vw - 32px));
+    overflow-y: auto;
+}
+
+#alter-form {
+    margin: 0;
+}
+
+.field-label {
+    display: block;
+    margin: 14px 0 6px;
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.field-input {
+    width: 100%;
+    min-height: 40px;
+    padding: 9px 11px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--text);
+    font: inherit;
+    font-size: 0.9rem;
+}
+
+.field-input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+textarea.field-input {
+    min-height: 88px;
+    resize: vertical;
+}
+
+.field-hint {
+    margin: 0 0 10px;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.color-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.color-row input[type="color"] {
+    flex: 0 0 auto;
+    width: 46px;
+    height: 40px;
+    padding: 3px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+
+.proxy-section {
+    margin: 18px 0 0;
+    padding: 6px 14px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.proxy-section .field-label {
+    margin-top: 0;
+}
+
+.proxy-section .toolbar-button {
+    margin-top: 4px;
+}
+
+.proxy-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.proxy-sep {
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.proxy-remove {
+    min-width: 40px;
+    padding: 0 10px;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+@media (max-width: 520px) {
+    .page {
+        padding: 16px;
+    }
+
+    .proxy-row {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    }
+
+    .proxy-sep {
+        display: none;
+    }
+}

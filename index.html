@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>patchwork v0.0.3</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
     <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        window.va = window.va || function () {
+            window.vaq = window.vaq || [];
+            window.vaq.push(arguments);
+        };
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -16,49 +20,60 @@
 <body>
     <main>
         <header id="main-head" class="main-box">
-            <a class="header-content" href="pages/dashboard.html" target="content-frame" aria-label="patchwork dashboard">
+            <a class="header-content" href="pages/dashboard.html" target="content-frame"
+                aria-label="patchwork dashboard">
                 <span id="header-logo" class="icon-small"><img src="assets/icon.png" alt=""></span>
                 <span class="brand-name">patchwork</span>
                 <span class="brand-version">v0.0.3</span>
             </a>
-            <div class="mobile-controls" aria-label="Sidebar controls">
-                <button class="sidebar-toggle left-toggle" type="button" aria-label="Open left sidebar" aria-expanded="false">
+            <div class="mobile-controls">
+                <button class="sidebar-toggle left-toggle" type="button" aria-label="Open left sidebar"
+                    aria-expanded="false">
                     ☰
                 </button>
-                <button class="sidebar-toggle right-toggle" type="button" aria-label="Open right sidebar" aria-expanded="false">
+                <button class="sidebar-toggle right-toggle" type="button" aria-label="Open right sidebar"
+                    aria-expanded="false">
                     ☰
                 </button>
             </div>
         </header>
         <nav id="navigation" class="main-box" aria-label="Global tools">
             <div class="toolbar-row">
-                <button id="switcher-button" class="toolbar-button switcher-button" type="button" aria-haspopup="dialog" aria-controls="switcher-dialog">
+                <button id="switcher-button" class="toolbar-button switcher-button" type="button" aria-haspopup="dialog"
+                    aria-controls="switcher-dialog">
                     <span>Switch alter</span><kbd>Ctrl K</kbd>
                 </button>
-                <form id="page-search" class="search-form" role="search">
+                <search id="page-search" class="search-form">
                     <label class="search-field">
                         <span aria-hidden="true">⌕</span>
-                        <input id="search-query" type="search" placeholder="Search this page" aria-label="Search this page">
+                        <input id="search-query" type="search" placeholder="Search this page"
+                            aria-label="Search this page">
                     </label>
-                    <button class="toolbar-button search-submit" type="submit">Search</button>
-                </form>
+                    <button class="toolbar-button search-submit" type="button">Search</button>
+                </search>
                 <div class="toolbar-actions">
-                    <button id="discord-sync-button" class="toolbar-button" type="button" aria-haspopup="dialog" aria-controls="discord-dialog">sync to Discord</button>
-                    <button id="activity-button" class="toolbar-button" type="button" aria-haspopup="dialog" aria-controls="activity-dialog">Activity</button>
+                    <button id="discord-sync-button" class="toolbar-button" type="button" aria-haspopup="dialog"
+                        aria-controls="discord-dialog">sync to Discord</button>
+                    <button id="activity-button" class="toolbar-button" type="button" aria-haspopup="dialog"
+                        aria-controls="activity-dialog">Activity</button>
                 </div>
             </div>
             <p id="toolbar-status" class="toolbar-status" role="status" aria-live="polite"></p>
         </nav>
         <aside id="sidebar-left" class="main-box">
             <ul>
-                <li><a class="button-sidebar" href="pages/dashboard.html" target="content-frame"><span class="icon-small"><img src="assets/icon-dashboard.png"
-                                placeholder="logo"></span>Dashboard</a></li>
-                <li><a class="button-sidebar" href="pages/system.html" target="content-frame"><span class="icon-small"><img src="assets/icon-system.png"
-                                placeholder="logo"></span>System</a></li>
-                <li><a class="button-sidebar" href="pages/alters.html" target="content-frame"><span class="icon-small"><img src="assets/icon-alters.png"
-                                placeholder="logo"></span>Alters</a></li>
-                <li><a class="button-sidebar" href="pages/settings.html" target="content-frame"><span class="icon-small"><img src="assets/icon-settings.png"
-                                placeholder="logo"></span>Settings</a></li>
+                <li><a class="button-sidebar" href="pages/dashboard.html" target="content-frame"><span
+                            class="icon-small"><img src="assets/icon-dashboard.svg"
+                                alt=""></span>Dashboard</a></li>
+                <li><a class="button-sidebar" href="pages/system.html" target="content-frame"><span
+                            class="icon-small"><img src="assets/icon-system.svg" alt=""></span>System</a>
+                </li>
+                <li><a class="button-sidebar" href="pages/alters.html" target="content-frame"><span
+                            class="icon-small"><img src="assets/icon-alters.svg" alt=""></span>Alters</a>
+                </li>
+                <li><a class="button-sidebar" href="pages/settings.html" target="content-frame"><span
+                            class="icon-small"><img src="assets/icon-settings.svg"
+                                alt=""></span>Settings</a></li>
             </ul>
         </aside>
         <section id="body" class="main-box">
@@ -75,7 +90,8 @@
         <div class="empty-state">
             <p class="empty-state-title">no alters added yet</p>
             <p class="dialog-hint">a list of alters will show up once they're added.</p>
-            <a id="switcher-alters-link" class="toolbar-button primary-action" href="pages/alters.html" target="content-frame">Open Alters</a>
+            <a id="switcher-alters-link" class="toolbar-button primary-action" href="pages/alters.html"
+                target="content-frame">Open Alters</a>
         </div>
     </dialog>
 
@@ -93,7 +109,8 @@
             <li>Ourkitty</li>
             <li>Tupperbox</li>
         </ul>
-        <a id="discord-settings-link" class="toolbar-button primary-action settings-action" href="pages/settings.html" target="content-frame">Open Settings</a>
+        <a id="discord-settings-link" class="toolbar-button primary-action settings-action" href="pages/settings.html"
+            target="content-frame">Open Settings</a>
     </dialog>
 
     <dialog id="activity-dialog" class="toolbar-dialog" aria-labelledby="activity-title">
